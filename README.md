@@ -1,2 +1,2 @@
 # TinardsBakedDelights
-Ecommerce Website for Tinards Baked Delights using Wordpress and Elementor
+Ecommerce Website for Tinards Baked Delights using Quasar and Firebase
