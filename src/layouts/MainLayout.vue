@@ -36,6 +36,7 @@
           v-for="link in essentialLinks"
           :key="link.title"
           v-bind="link"
+          :click = "link.click"
         />
       </q-list>
     </q-drawer>
