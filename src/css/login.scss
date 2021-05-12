@@ -56,7 +56,7 @@
 }
 
 .login-form-picture {
-  background-image: url("../../public/img/Cvsu-Login-Background.jpg");
+  background-image: url("../../public/img/Banner-Tinards.jpg");
   width: calc(100% - 560px);
   background-repeat: no-repeat;
   background-size: cover;
@@ -74,25 +74,11 @@
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.1);
 }
 
 .p-b-login-form {
   font-family: Cooper, sans-serif !important;
   font-weight: 650;
-}
-
-.title-top {
-  font-size: 32px;
-  margin: 0;
-  margin-bottom: -20px;
-  margin-top: -15px;
-}
-
-.title-bottom {
-  font-size: 28px;
-  margin: 0;
-  margin-bottom: 10px;
 }
 
 .login-item {

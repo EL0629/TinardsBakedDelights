@@ -17,7 +17,7 @@
         <div class="full-height full-width flex flex-center"
            style="z-index:0; height: 100vh !important;">
           <div class="text-h4 q-pa-md" style="color: #1A1A1A;">
-            <img src="../../public/img/TinardsLogo-removebg.png" height="315px" width="315px" class="q-p-xs q-ml-sm" />
+            <img src="../../public/img/TinardsLogoRemoveBg.png" height="315px" width="315px" class="q-p-xs q-ml-sm" />
             Tinard’s Baked Delights is a variety of delightful treats made entirely from scratch using, simple, natural ingredients.
           </div>
         </div>
@@ -98,11 +98,11 @@
           </q-card>
         </div>
         <div class="col-md-12 col-md-12 col-xs-12 col-sm-12 q-mb-xl flex flex-center">
-          <q-card class="my-card" flat bordered>
+          <q-card class="my-card"  style="border-radius: 20px;" flat bordered>
             <q-card-section>
               <q-card-section>
                 <div class="class">
-                  <img src="../../public/img/Products/Cookies.jpg" height="295px" width="280px"/>
+                  <img src="../../public/img/Products/Cookies.jpg" height="295px" width="280px" style="border-radius: 20px;"/>
                 </div>
                 <div class="text-h5 text-center text-pink q-pt-md q-pb-xs">Cookies</div>
                 <div class="text-h6 text-center text-pink q-pa-md">&#8369; 75.00</div>
@@ -194,9 +194,9 @@
         </div>
       </div>
     </div>
-    <q-toolbar class="flex flex-center text-white text-center" style="background-color: #FFFBE8;" id="id_contact_me">
+    <q-toolbar class="flex flex-center text-center" style="background-color: #FFFBE8;" id="id_contact_me">
       <div class="q-pa-sm q-gutter-sm">
-        <div class="text-subtitle2" style="color: #1A1A1A">&copy; All Right Resevered By TinardsBakedDelights</div>
+        <div class="text-subtitle2" style="color: #1A1A1A;">&copy; All Right Resevered By TinardsBakedDelights</div>
       </div>
     </q-toolbar>
   </q-layout>

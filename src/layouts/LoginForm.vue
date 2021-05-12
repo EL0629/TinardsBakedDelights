@@ -8,8 +8,6 @@
               <div class="center">
                 <span class="login-form-title p-b-login-form">
                   <img src="../../public/img/LogoWhiteCropped.png" />
-                  <!-- <h2 class="title-top">Tinards</h2>
-                  <h2 class="title-bottom">Baked Delights</h2> -->
                 </span>
 
                 <div class="login-item">
