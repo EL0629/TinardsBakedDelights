@@ -24,7 +24,8 @@ module.exports = function (/* ctx */) {
     // https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
     css: [
       'app.scss',
-      'login.scss'
+      'login.scss',
+      'menu.scss'
     ],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
