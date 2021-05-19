@@ -1,5 +1,5 @@
 <template>
-  <q-card-section class="row header">
+  <q-card-section class="row forgot-password-header">
     <div class="text-h6" align="center">
       <slot></slot>
     </div>
