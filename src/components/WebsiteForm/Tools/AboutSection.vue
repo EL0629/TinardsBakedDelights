@@ -5,7 +5,7 @@
       </div>
       <div class="text-h5 q-px-xl q-py-lg q-mx-xl about-text" style="background-color: #FFFBE8; font-family: CenturyGothic">
         <div class="text-h4 text-center about-home">Welcome to Tinard’s Baked Delights!!</div>
-        <q-space class="q-mt-xl q-mb-md"/>
+        <q-space class="q-mt-md q-mb-md"/>
         We are committed to using fresh, high end and local ingredients. The shop boasts a beautiful, light filled cafe where you can enjoy a 
         croissant warm from the oven, or you can take your treats to our patio and enjoy the outdoors with your dessert both day and night.
         <q-space class="q-mt-md q-mb-md"/>

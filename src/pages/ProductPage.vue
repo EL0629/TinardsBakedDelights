@@ -44,6 +44,8 @@
       </div>
       <div class="row justify-center q-mt-lg">
         <q-btn
+          @click="addPost"
+          :disable="!post.productName || !post.photo" 
           class="q-pa-xs text-subtitle1 text-app"
           color="primary"
           label="Post Product"
@@ -95,6 +97,33 @@ export default {
       }
       reader.readAsDataURL(file)    
     },
+    addPost() {
+      this.$q.loading.show()
+      let formData = new FormData()
+      formData.append('id', this.post.id)
+      formData.append('productName', this.post.productName)
+      formData.append('prize', this.post.prize)
+      formData.append('date', this.post.date)
+      formData.append('file', this.post.photo, this.post.id + '.png')
+
+      this.$axios.post(`${ process.env.API }/createPost`, formData).then(response => {
+        console.log('reponse: ', response)
+        this.$router.push('/')
+        this.$q.notify({
+          message: 'Post created!',
+          actions: [
+            { label: 'Dismiss', color: 'white' }
+          ]
+        })
+        this.$q.loading.hide()
+      }).catch(err => {
+        this.$q.dialog({
+          title: 'Error',
+          message: 'Sorry, could not create post product!'
+        })
+        this.$q.loading.hide()
+      })
+    }
   }
 }
 </script>
