@@ -1,3 +1,44 @@
+.text-app {
+  font-family: CenturyGothic, "Roboto", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+}
+
+.text-poiret-one {
+  font-family: "Poiret One", "Roboto", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+}
+
+.small-screen-only {
+  @media (max-width: $breakpoint-xs-max) {
+    display: block;
+  }
+  @media (min-width: $breakpoint-sm-min) {
+    display: none;
+  }
+}
+
+.large-screen-only {
+  @media (max-width: $breakpoint-xs-max) {
+    display: none;
+  }
+  @media (min-width: $breakpoint-sm-min) {
+    display: block;
+  }
+}
+.constrain {
+  max-width: 956px;
+  margin: 0 auto;
+}
+
+.constrain-more {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.forgot-password-header {
+  font-family: CenturyGothic;
+}
+
 .container {
   width: 100%;
   padding-right: 15px;

@@ -1,108 +1,129 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="leftDrawerOpen = !leftDrawerOpen"
-        />
-
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
+    <q-header
+      class="text-grey-10"
+      style="background-color: #FCE4EC;"
+      bordered
+    >   
+      <img
+        class="q-ma-sm small-screen-only img-breakpoint"
+        height="50"
+        src="../../public/img/tinards-logo.png"
+        width="120"
+      />
+        <q-toolbar>
+          <img
+            class="q-ma-sm large-screen-only"
+            height="50"
+            src="../../public/img/tinards-logo.png"
+            width="130"
+          />
+          <q-space/>
+          <q-tabs
+            v-model="selected_tab"
+            style="background-color: #FCE4EC;"
+            class="text-grey-10 large-screen-only text-app"
+            active-color="pink"
+            indicator-color="transparent"
+            
+          >
+            <q-tab
+              @click="scrollToElement('id_home')"
+              class="text-capitalize"
+              style="width: 120px;"
+              label="Home"
+            />
+            <q-tab
+              @click="scrollToElement('id_about')"
+              class="text-capitalize"
+              style="width: 120px;"
+              label="About"
+            />
+            <q-tab
+              @click="scrollToElement('id_shop')"
+              class="text-capitalize"
+              style="width: 120px;"
+              label="Shop"
+            />
+            <q-tab
+              @click="scrollToElement('id_contact')"
+              class="text-capitalize"
+              style="width: 120px;"
+              label="Contact Us"
+            />
+          </q-tabs>
+        </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
+    <q-footer
+      class="bg-white small-screen-only"
       bordered
-      content-class="bg-grey-1"
     >
-      <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
-          Essential Links
-        </q-item-label>
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-          :click = "link.click"
+      <q-tabs
+        style="background-color: #FCE4EC;"
+        class="text-grey-10"
+        active-color="pink"
+        indicator-color="transparent"
+        v-model="selected_tab"
+      >
+        <q-tab
+          icon="eva-home-outline"
+          @click="scrollToElement('id_home')"
         />
-      </q-list>
-    </q-drawer>
+        <q-tab
+          icon="eva-info-outline"
+          @click="scrollToElement('id_about')"
+        />
+        <q-tab
+          icon="eva-shopping-cart-outline"
+          @click="scrollToElement('id_shop')"
+        />
+        <q-tab
+          icon="eva-phone-outline"
+          @click="scrollToElement('id_contact')"
+        />
+      </q-tabs>
+    </q-footer>
 
-    <q-page-container>
+    <q-page-container >
       <router-view />
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
-import EssentialLink from 'components/EssentialLink.vue'
-
-const linksData = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-];
-
+import {scroll} from 'quasar'
+const {getScrollTarget, setScrollPosition} = scroll
 export default {
   name: 'MainLayout',
-  components: { EssentialLink },
-  data () {
+  data() {
     return {
-      leftDrawerOpen: false,
-      essentialLinks: linksData
+      selected_tab: 't_0',
     }
-  }
+  },
+  methods: {
+    scrollToElement(id) {
+        let el = document.getElementById(id)
+        const target = getScrollTarget(el)
+        const offset = el.offsetTop
+        const duration = 800
+        setScrollPosition(target, offset, duration)
+    }
+  },
 }
 </script>
+
+<style lang="sass">
+  .q-header
+    @media (max-width: $breakpoint-xs-max)
+      .img-breakpoint
+        display: block
+        margin-left: auto
+        margin-right: auto
+        width: 35%
+      .q-toolbar
+        display: none
+  .text-app
+    .q-tab__label
+      font-size: 18px
+</style>

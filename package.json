@@ -7,15 +7,16 @@
   "private": true,
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
-    "icons": "icongenie generate -i public/img/TinardsCircleLogo.png --theme-color 136A8A --skip-trim"
+    "icons": "icongenie generate -i public/img/TinardsCircleLogo.png --theme-color F1C0BC --skip-trim"
   },
   "dependencies": {
-    "@quasar/extras": "^1.10.4",
+    "@quasar/extras": "^1.10.6",
     "core-js": "^3.6.5",
-    "quasar": "^1.15.15"
+    "md-gum-polyfill": "^1.0.0",
+    "quasar": "^1.15.19"
   },
   "devDependencies": {
-    "@quasar/app": "^2.2.6"
+    "@quasar/app": "^2.2.8"
   },
   "browserslist": [
     "last 10 Chrome versions",
