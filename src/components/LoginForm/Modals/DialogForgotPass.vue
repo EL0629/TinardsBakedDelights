@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   data() {
     return {
@@ -22,6 +23,8 @@ export default {
     };
   },
   methods: {
+    ...mapActions("auth", ["forgotPassword"]),
+
     submitForm() {
       this.$refs.modalEmail.$refs.email.validate();
       if (!this.$refs.modalEmail.$refs.email.hasError) {

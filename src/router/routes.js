@@ -13,10 +13,19 @@ const routes = [
   },
   {
     path: '/AdminForm',
-    component: () => import('layouts/LoginForm.vue'),
-    children: [
-      { path: '', component: () => import('src/pages/ProductPage.vue') }
-    ]
+    component: () => import('layouts/AdminForm.vue'),
+      children: [
+        {
+          path: '',
+          component: () =>
+            import('src/pages/ProductPage.vue')
+        },
+        {
+            path: 'Account',
+            component: () =>
+              import ('pages/AccountPage.vue')
+        },
+      ]
   },
 
   // Always leave this as last one,

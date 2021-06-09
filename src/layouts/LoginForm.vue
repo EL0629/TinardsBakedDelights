@@ -5,6 +5,10 @@
         <div class="wrap-login">
           <q-form class="login-form">
             <div class="item-container">
+              <div class="absolute-left q-ma-md">
+                <q-btn round to="/" style="background-color: #F7B8B2; color: #ffffff;"
+                      icon="arrow_back"/>
+              </div>
               <div class="center">
                 <span class="login-form-title p-b-login-form">
                   <img src="../../public/img/LogoWhiteCropped.png" />
@@ -52,7 +56,7 @@
                     rounded
                     class="login-btn q-mb-md"
                     label="Login"
-                    to="/AdminForm"
+                    @click="loginForm()"
                   />
                   <forgot-button />
                 </div>
@@ -70,6 +74,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   data(){
     return{
@@ -84,6 +89,7 @@ export default {
     } 
   },
   methods: {
+    ...mapActions("auth", ["loginUser"]),
     loginForm() {
       this.loginUser(this.formData);
     },
@@ -108,7 +114,3 @@ export default {
   }
 }
 </script>
-
-<style lang="stylus">
-
-</style>

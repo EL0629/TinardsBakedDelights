@@ -13,11 +13,12 @@
     "@quasar/extras": "^1.10.6",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "firebase": "^8.6.5",
     "md-gum-polyfill": "^1.0.0",
-    "quasar": "^1.15.19"
+    "quasar": "^1.15.20"
   },
   "devDependencies": {
-    "@quasar/app": "^2.2.8"
+    "@quasar/app": "^2.2.9"
   },
   "browserslist": [
     "last 10 Chrome versions",

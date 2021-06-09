@@ -1,52 +1,17 @@
 <template>
   <q-layout view="hHh lpr lFf" class="shadow-2 rounded-borders">
-    <q-header elevated style="background-color: #FCE4EC;">
-      <q-toolbar class="mainmenuheader" height="60px">
-        <q-btn flat dense round @click="leftDrawerOpen = !leftDrawerOpen" aria-label="Menu">
-          <q-icon name="menu" />
-        </q-btn>
-
-        <img src="../../public/img/tinards-logo.png" width="140" height="40" class="q-p-md q-ml-sm" />
+    <q-header elevated style="background-color: #FCE4EC; font-family: CenturyGothic;" height="60px" class="text-grey-10">
+        <img src="../../public/img/tinards-logo.png" width="120" height="50" class="q-ma-sm q-ml-md small-screen-only" />
 
         <q-btn
-          @click="logoutUser"
+          @click="logout"
           flat
           icon="account_circle"
           label="Logout"
           class="absolute-right"
         />
-      </q-toolbar>
     </q-header>
-    <q-drawer
-      v-model="leftDrawerOpen"
-      :width="300"
-      show-if-above
-      bordered
-      content-class="bg-grey-2"
-    >
-      <q-list>
-        <form>
-          <q-item-label header>Tinards Baked Delights</q-item-label>
-        </form>
-        <q-separator />
 
-        <q-item
-          v-for="nav in topnavs"
-          :key="nav.label"
-          :to="nav.to"
-          active-class="text-green-6"
-          exact
-          clickable
-        >
-          <q-item-section avatar>
-            <q-icon :name="nav.icon" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>{{ nav.label }}</q-item-label>
-          </q-item-section>
-        </q-item>
-      </q-list>
-    </q-drawer>
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -61,29 +26,28 @@ export default {
   name: "MyLayout",
   data() {
     return {
-      leftDrawerOpen: this.$q.platform.is.desktop,
-
-      //Array navigation Bar
-      topnavs: [
-        {
-          label: "Dashboard",
-          icon: "home",
-        },
-        {
-          label: "Account",
-          icon: "manage_accounts",
-        },
-        {
-          label: "Products",
-          icon: "inventory_2"
-        }
-      ],
     };
   },
   methods: {
     ...mapState("auth", ["loggedIn"]),
     ...mapActions("auth", ["logoutUser"]),
-    openURL
+    openURL,
+    logout() {
+      this.$q.dialog({
+        title: 'Confirm',
+        message: 'Are you sure you want to logout?',
+        cancel: true,
+        persistent: true
+      }).onOk(() => {
+        this.logoutUser()
+      }).onOk(() => {
+        this.logoutUser()
+      }).onCancel(() => {
+        // console.log('>>>> Cancel')
+      }).onDismiss(() => {
+        // console.log('I am triggered on both OK and Cancel')
+      })
+    }
   }
 };
 </script>

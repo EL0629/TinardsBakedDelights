@@ -1,5 +1,5 @@
 <template>
-  <q-page class="constrain-more q-pa-md">
+  <q-page class="constrain-more q-pa-md" style="font-family: CenturyGothic">
     <div class="camera-frame q-pa-md">
       <canvas
         v-show="imageCaptured"
