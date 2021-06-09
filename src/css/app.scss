@@ -111,7 +111,7 @@
 .site-banner {
   background: url(../../public/img/Banner.jpg);
   /* Full height */
-  height: 100%;
+  min-height: 100%;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: relative;

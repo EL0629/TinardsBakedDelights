@@ -82,11 +82,6 @@
           icon="eva-phone-outline"
           @click="scrollToElement('id_contact')"
         />
-        <q-route-tab
-          icon="account_circle"
-          to="/LoginForm"
-          exact
-        />
       </q-tabs>
     </q-footer>
 
