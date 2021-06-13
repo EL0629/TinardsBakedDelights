@@ -1,6 +1,6 @@
 <template>
-    <section class="site-banner" style="min-height:100vh" id="id_home">
-      <div class="container">
+    <section class="site-banner" style="height:100vh" id="id_home">
+      <div class="container content-main">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 banner-logo flex flex-center">
             <img src="../../../../public/img/LogoWhiteCropped.png" class="q-p-xs q-ml-sm" />

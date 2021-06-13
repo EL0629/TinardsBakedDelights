@@ -1,7 +1,7 @@
 <template>
   <q-layout view="hHh lpr lFf" class="shadow-2 rounded-borders">
     <q-header elevated style="background-color: #FCE4EC; font-family: CenturyGothic;" height="60px" class="text-grey-10">
-        <img src="../../public/img/tinards-logo.png" width="120" height="50" class="q-ma-sm q-ml-md small-screen-only" />
+        <img src="../../public/img/tinards-logo.png" width="120" height="50" class="q-ma-sm q-ml-md" />
 
         <q-btn
           @click="logout"

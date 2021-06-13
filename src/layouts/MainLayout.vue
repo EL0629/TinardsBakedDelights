@@ -51,6 +51,12 @@
               style="width: 120px;"
               label="Contact Us"
             />
+            <q-route-tab
+              to="/LoginForm"
+              class="text-capitalize"
+              style="width: 120px;"
+              label="Login"
+            />
           </q-tabs>
         </q-toolbar>
     </q-header>
@@ -81,6 +87,10 @@
         <q-tab
           icon="eva-phone-outline"
           @click="scrollToElement('id_contact')"
+        />
+        <q-route-tab
+          icon="account_circle"
+          to="/LoginForm"
         />
       </q-tabs>
     </q-footer>

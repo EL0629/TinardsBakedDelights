@@ -7,7 +7,9 @@
   "private": true,
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
-    "icons": "icongenie generate -i public/img/TinardsCircleLogo.png --theme-color F1C0BC --skip-trim"
+    "icons": "icongenie generate -i public/img/TinardsCircleLogo.png --theme-color F1C0BC --skip-trim",
+    "deploy": "quasar build && firebase deploy",
+    "appdev": "quasar build -m android --debug"
   },
   "dependencies": {
     "@quasar/extras": "^1.10.6",
